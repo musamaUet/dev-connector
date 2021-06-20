@@ -8,18 +8,22 @@ const User = require('../../models/User');
 // @desc        Get current user profile
 // @access      Private
 
-router.get('/me', auth, (req, res) => {
+router.get('/me', auth, async (req, res) => {
   try {
     const user_id = req.user.id;
-    const profile = Profile.findOne({ user: user_id }).populate('user', [
+    console.log('req.user.id', user_id);
+    const profile = await Profile.findOne({ user: user_id }).populate('user', [
       'name',
       'avatar',
     ]);
+    console.log('profile', profile);
+
     if (!profile) {
       return res.status(400).json({ msg: 'There is no profile for this user' });
     }
     return res.json(profile);
   } catch (error) {
+    console.log('err', error);
     return res.status(500).send('server error');
   }
 });
