@@ -1,0 +1,4 @@
+{
+  "mongoDbUrl": "mongodb://localhost:27017/dev-connector",
+  "jwtSecret": "Muhammad"
+}
