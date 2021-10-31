@@ -1,4 +1,6 @@
 {
   "mongoDbUrl": "mongodb://localhost:27017/dev-connector",
-  "jwtSecret": "Muhammad"
+  "jwtSecret": "Muhammad",
+  "githubClientId": "4500832ac6b517672ba9",
+  "githubSecret": "97f45031078793a2fdabd48501ad6f0f8413d34"
 }
